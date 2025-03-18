@@ -1,0 +1,21 @@
+# Defining calculate_insurance_cost() to return two values function below: 
+def calculate_insurance_cost(age, sex, bmi, num_of_children, smoker, name):
+  estimated_cost = 250*age - 128*sex + 370*bmi + 425*num_of_children + 24000*smoker - 12500
+  output_message = "The estimated insurance cost for " + name + " is " + str(estimated_cost) + " dollars"
+  return (output_message, estimated_cost)
+
+# Defining function to calculate difference in insurane cost:
+def insurance_cost_difference(output_message1, insurance_cost1, output_message2, insurance_cost2):
+  print(output_message1)
+  print(output_message2)
+  print("The difference in insurance cost is " + str(insurance_cost1 - insurance_cost2) + " dollars")
+
+
+# Calling insurance cost for Maria
+maria_output_message, maria_insurance_cost = calculate_insurance_cost(28, 0, 26.2, 3, 0, name="Maria")
+
+# Calling insurance cost for Omar
+omar_output_message, omar_insurance_cost = calculate_insurance_cost(35, 1, 22.2, 0, 1, "Omar")
+
+# Calling for insurance_cost_difference
+insurance_cost_difference(omar_output_message, omar_insurance_cost, maria_output_message, maria_insurance_cost)
